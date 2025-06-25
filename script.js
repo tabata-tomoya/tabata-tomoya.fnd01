@@ -1,4 +1,18 @@
-unction updateDisplay() {
+// プレイヤーの手の状態をオブジェクトで管理
+let p1 = { left: 1, right: 1 };
+let p2 = { left: 1, right: 1 };
+
+// 表示用の名前と手のラベルを返す関数
+function getPlayerLabel(player) {
+  return player === "p1" ? "プレイヤー1" : "プレイヤー2";
+}
+
+function getHandLabel(hand) {
+  return hand === "left" ? "左手" : "右手";
+}
+
+// 表示を更新する関数
+function updateDisplay() {
   document.getElementById("p1left").textContent = p1.left;
   document.getElementById("p1right").textContent = p1.right;
   document.getElementById("p2left").textContent = p2.left;
