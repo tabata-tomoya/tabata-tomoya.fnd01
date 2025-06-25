@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>割りばしゲーム</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>割りばしゲーム</h1>
+
+      <!-- 共通操作 -->
+    <div id="system-controls">
+      <button onclick="resetGame()">リセット</button>
+  </div>
+  
+          <p id="message"></p>
+  <div id="game">
+    <!-- プレイヤー1の情報 -->
+    <div class="player" id="player1">
+      <h2>プレイヤー1</h2>
+      <p>左手: <span id="p1left">1</span></p>
+      <p>右手: <span id="p1right">1</span></p>
+    </div>
+
+    <!-- プレイヤー1の操作 -->
+    <div class="controls" id="p1-controls">
+      <h3>プレイヤー1の操作</h3>
+      <button onclick="attack('p1', 'left', 'p2', 'left')">左手 → 左手</button>
+      <button onclick="attack('p1', 'left', 'p2', 'right')">左手 → 右手</button>
+      <button onclick="attack('p1', 'right', 'p2', 'left')">右手 → 左手</button>
+      <button onclick="attack('p1', 'right', 'p2', 'right')">右手 → 右手</button>
+      <button onclick="split('p1')">分割</button>
+    </div>
+
+    <!-- プレイヤー2の情報 -->
+    <div class="player" id="player2">
+      <h2>プレイヤー2</h2>
+      <p>左手: <span id="p2left">1</span></p>
+      <p>右手: <span id="p2right">1</span></p>
+    </div>
+
+    <!-- プレイヤー2の操作 -->
+    <div class="controls" id="p2-controls">
+      <h3>プレイヤー2の操作</h3>
+      <button onclick="attack('p2', 'left', 'p1', 'left')">左手 → 左手</button>
+      <button onclick="attack('p2', 'left', 'p1', 'right')">左手 → 右手</button>
+      <button onclick="attack('p2', 'right', 'p1', 'left')">右手 → 左手</button>
+      <button onclick="attack('p2', 'right', 'p1', 'right')">右手 → 右手</button>
+      <button onclick="split('p2')">分割</button>
+    </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
